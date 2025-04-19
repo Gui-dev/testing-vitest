@@ -1,8 +1,8 @@
 interface IGreentingProps {
-  name: string
+  name?: string
 }
 
-export const Greeting = ({ name }: IGreentingProps) => {
+export const Greeting = ({ name = 'Batman' }: IGreentingProps) => {
   return (
     <div>
       <h1>Hello, {name}</h1>
