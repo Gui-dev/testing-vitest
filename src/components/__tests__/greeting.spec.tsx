@@ -10,4 +10,10 @@ describe('<Greeting />', () => {
 
     expect(screen.getByText('Hello, Batman')).toBeInTheDocument()
   })
+
+  it('should be able renders greenting with a name', () => {
+    render(<Greeting name="Clark Kent" />)
+
+    expect(screen.getByText('Hello, Clark Kent')).toBeInTheDocument()
+  })
 })
