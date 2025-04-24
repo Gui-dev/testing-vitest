@@ -28,4 +28,22 @@ describe('useCounter())', () => {
 
     expect(result.current.count).toBe(2)
   })
+
+  it('should be able to decrement', async () => {
+    const { result } = renderHook(() => useCounter({ initialValue: 5 }))
+
+    expect(result.current.count).toBe(5)
+
+    act(() => {
+      result.current.decrement()
+    })
+
+    expect(result.current.count).toBe(4)
+
+    act(() => {
+      result.current.decrement()
+    })
+
+    expect(result.current.count).toBe(3)
+  })
 })
