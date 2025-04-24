@@ -1,7 +1,6 @@
 import '@testing-library/jest-dom/vitest'
 import { render, screen, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { userEvent } from '@testing-library/user-event'
 
 import { UserProfile } from './../user-profile'
 
@@ -27,7 +26,9 @@ describe('<UserProfile />', () => {
     expect(screen.getByText(/carregando/i)).toBeInTheDocument()
 
     await waitFor(() => {
-      expect(screen.getByText(/bruce wayne/i)).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { name: /bruce wayne/i })
+      ).toBeInTheDocument()
       expect(screen.getByText(/bruce@email.com/i)).toBeInTheDocument()
     })
   })
