@@ -1,54 +1,54 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🧪 Testes em React com Vitest e Testing Library
 
-Currently, two official plugins are available:
+Este projeto demonstra como escrever testes unitários em aplicações 
+React utilizando 
+[Vitest](https://vitest.dev/),
+[Testing Library](https://testing-library.com/), 
+[jest-dom](https://github.com/testing-library/jest-dom) e 
+[user-event](https://testing-library.com/docs/user-event/intro/).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias utilizadas
 
-## Expanding the ESLint configuration
+- **React**
+- **Vitest** – para rodar os testes
+- **@testing-library/react** – para renderizar os componentes em ambiente de teste
+- **@testing-library/jest-dom** – para matchers adicionais no `expect`
+- **@testing-library/user-event** – para simular interações do usuário
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧱 Estrutura dos testes
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+O projeto inclui exemplos de testes para:
+
+- ✅ Componentes React
+- 🔁 Custom Hooks
+- 🖱️ Eventos e interações (ex: clique em botões, digitação)
+- 🔮 Mocks de funções e módulos
+- 🔥 Testes com múltiplos estados e efeitos colaterais
+
+
+## 📋 Como rodar os testes
+
+0. Clone o Repositorio
+
+```bash
+  git clone https://github.com/Gui-dev/testing-vitest.git
+```  
+
+1. Instale as dependências:
+  
+```bash
+   npm install
+   # ou
+   yarn
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Rode os testes
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+  npm run test
+  # ou
+  yarn test
 ```
+

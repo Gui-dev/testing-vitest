@@ -14,6 +14,7 @@ describe('<UserProfile />', () => {
   })
 
   it('should be able to fetches and displays the user data', async () => {
+    // @ts-ignore
     globalThis.fetch.mockResolvedValueOnce({
       json: async () => ({
         id: 4,
